@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//Linear search function with a complexity of O(n+m)
 int search_tallest(vector<vector<int>> skyline, int n, int m){
     for(int i = 0; i < n; i++){
         for(int a = 0; a < m; a++){
