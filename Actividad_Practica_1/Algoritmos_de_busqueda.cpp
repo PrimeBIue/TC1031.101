@@ -44,7 +44,6 @@ int main(){
     DECLARE_TIMING(t1);
     for (size_t i = 0; i < nums.size(); i++)
     {
-        
         START_TIMING(t1);
         int index = secSearch.search(nums[i], arr);
         STOP_TIMING(t1);
@@ -53,38 +52,42 @@ int main(){
         cout << endl << endl;
     }
     
-
-    //Busqueda secuencial ordenada 2
-    secSearch.sort_desc(arr);
-    cout << "Busqueda secuencial ordenada 2: " << endl << endl;
-    DECLARE_TIMING(t3);
-    for (size_t i = 0; i < nums.size(); i++)
-    {
-        
-        START_TIMING(t3);
-        int index = secSearch.search(nums[i], arr);
-        STOP_TIMING(t3);
-        cout << "Number: " << nums[i] << "\tFound at index: " << index << endl << endl;
-        SHOW_TIMING(t3, "Busqueda secuencial ordenada 2: ");
-        cout << endl << endl;
-    }
-
     //Busqueda secuencial ordenada 1
-    secSearch.sort_asc(arr);
-
+    
+    OrgSecuentialSearch1<int> orgSecSearch1;
+    orgSecSearch1.sort_asc(arr);
     cout << "Busqueda secuencial ordenada 1: " << endl << endl;
     DECLARE_TIMING(t2);
     for (size_t i = 0; i < nums.size(); i++)
     {
         
         START_TIMING(t2);
-        int index = secSearch.search(nums[i], arr);
+        int index = orgSecSearch1.search(nums[i], arr);
         STOP_TIMING(t2);
         cout << "Number: " << nums[i] << "\tFound at index: " << index << endl << endl;
         SHOW_TIMING(t2, "Busqueda secuencial ordenada 1: ");
         cout << endl << endl;
     }
 
+    //Busqueda secuencial ordenada 2
+    OrgSecuentialSearch2<int> orgSecSearch2;
+    cout << "Busqueda secuencial ordenada 2: " << endl << endl;
+    DECLARE_TIMING(t3);
+    for (size_t i = 0; i < nums.size(); i++)
+    {
+        
+        START_TIMING(t3);
+        int index = orgSecSearch2.search(nums[i], arr);
+        STOP_TIMING(t3);
+        cout << "Number: " << nums[i] << "\tFound at index: " << index << endl << endl;
+        SHOW_TIMING(t3, "Busqueda secuencial ordenada 2: ");
+        cout << endl << endl;
+    }
+
+    
+
+
+    //Busqueda Binaria
     BinarySearch<int> biSearch;
     cout << "Busqueda Binaria: " << endl << endl;
     DECLARE_TIMING(t4);
