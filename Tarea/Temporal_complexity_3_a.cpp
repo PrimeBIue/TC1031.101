@@ -9,11 +9,11 @@ int main(){
     
     int n = 5; //cantidad de elementos en y
     int m = 6; //cantidad de elementos en x
-    vector<vector<int>> skyline = {{1,1,1,1,1,1},
-                                   {1,1,1,1,1,1},
-                                   {1,1,1,1,1,1},
-                                   {1,1,1,1,1,1},
-                                   {1,1,1,0,1,1}};
+    vector<vector<int>> skyline = {{1,1,1,0,1,1},
+                                   {1,1,0,0,1,1},
+                                   {0,1,0,0,1,1},
+                                   {0,1,0,0,0,1},
+                                   {0,0,0,0,0,1}};
     bool tallest_found = false; // Define si se encontro el edificio más alto
     int left = 0; //Esto se refiere a la altura máxima en donde está buscando el algoritmo
     int right = n-1; //Esto se refiere a la altura mínima en donde está buscando el algoritmo
