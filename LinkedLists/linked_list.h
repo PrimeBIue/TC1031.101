@@ -227,13 +227,15 @@ public:
 
         //En caso de que el valor del nuevo nodo sea menor al valor del head
         if(val < ptr->get_val())
+        {
             head = newNode;
             newNode->set_next(ptr);
             return;
+        }
 
-        while(next->get_next() != NULL)
+        while(next != NULL)
         {
-            if(ptr->get_val() <= val && next->get_val() >= val)
+            if(ptr->get_val() <= val && val <= next->get_val())
             {
                 ptr->set_next(newNode);
                 newNode->set_next(next);
@@ -242,7 +244,7 @@ public:
             ptr = next;
             next = next->get_next();
         }
-        next->set_next(newNode);
+        ptr->set_next(newNode);
 
     };
     /*
